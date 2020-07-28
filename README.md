@@ -20,3 +20,5 @@ To run this project website locally
 ## Reference
 
 See [React file upload: proper and easy way](https://programmingwithmosh.com/javascript/react-file-upload-proper-server-side-nodejs-easy/)
+
+![image](https://github.com/JackyTung/simple-react-upload/blob/master/upload-file.gif)
