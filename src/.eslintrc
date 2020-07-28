@@ -1,0 +1,70 @@
+{
+  "extends": ["react-app", "plugin:prettier/recommended", "plugin:react/recommended"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    // ignore
+    "global-require": 0,
+    "no-alert": 0,
+    "no-restricted-syntax": 0,
+    "no-mixed-operators": 0,
+    "max-len": 0,
+    "no-bitwise": 0,
+    "no-use-before-define": 0,
+    "camelcase": 0,
+    "import/default": 0,
+    "import/no-duplicates": 0,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-dynamic-require": 0,
+    "import/prefer-default-export": 0,
+    "react/no-multi-comp": 0,
+    "react/display-name": 0,
+    "react-hooks/exhaustive-deps": 0,
+    // warn
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    // error
+    "no-unused-vars": 2,
+    "no-console": [2, { "allow": ["warn", "error"] }],
+    "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "Set"] }],
+    "curly": [2, "all"],
+    "no-case-declarations": 2,
+    "import/no-named-as-default": 2,
+    "simple-import-sort/sort": [
+      2,
+      {
+        "groups": [
+          // Side effect imports.
+          ["^\\u0000"],
+          // React, Redux imports
+          ["^react", "^redux"],
+          // Packages
+          // Things that start with a letter (or digit or underscore)
+          ["^\\w"],
+          // Packages.
+          // Things that start with a @. usually @material-ui
+          ["^@\\w"],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything that does not start with a dot.
+          // Relative imports.
+          // Anything that starts with a dot.
+          ["^[^.]", "^\\."]
+        ]
+      }
+    ],
+    "prettier/prettier": 2,
+    "react-hooks/rules-of-hooks": 2,
+    "react/self-closing-comp": 2
+  },
+  "plugins": ["import", "simple-import-sort", "prettier", "react", "react-hooks"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  }
+}
