@@ -4,8 +4,8 @@ import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import NotFound from '@/components/NotFound';
 
-const AsyncAccount = new Loadable({
-  loader: () => import(/* webpackChunkName: "account" */ './Account'),
+const AsyncUpload = new Loadable({
+  loader: () => import(/* webpackChunkName: "upload" */ './Upload'),
   loading: () => [],
 });
 
@@ -13,8 +13,8 @@ const ConsoleIndex = () => {
   const { url } = useRouteMatch();
   return (
     <Switch>
-      {<Route exact path={url} render={() => <Redirect to={'/console/account'} />} />}
-      <Route path={`${url}/account`} component={AsyncAccount} />
+      {<Route exact path={url} render={() => <Redirect to={'/console/upload'} />} />}
+      <Route path={`${url}/upload`} component={AsyncUpload} />
       {<Route component={NotFound} />}
     </Switch>
   );
