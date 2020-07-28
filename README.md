@@ -1,14 +1,22 @@
-This project is a example to show the basic requirement for building large web application.
-(Note: It's not the Best Practice, we just share our experience. The project structure depends on your scenario)
+# Simple React Upload
 
-1. follow create-react-app, avoid to use webpack (it's to complicated)
-2. easy-managed router (react-router)
-3. code splitting based on different components, only loads necessary js file. (react-loadable)
-4. easy-managed states, keep all data from the same source. (redux)
-5. separate UI logic, data select logic (reselect) and data fetching logic.
-6. handle async actions (redux-observable).
-7. use third-party design system (material-UI)
-8. support i18n (react-i18next)
-9. consistent coding style (eslint, prettier)
+## Requirements
+* Upload directory from local
+* Handle Validation on client side
+  * Too many files to upload
+  * Upload files with invalid file extension
+  * File is too large
+  * CSV content is valid
+* Sepcify upload destination on each file
+* Error handling
 
-For more detail introduce of this project, [check here](https://medium.com/htc-research-engineering-blog/talk-about-large-react-project-structure-9ebb321d51df).
+
+## Quick Start
+To run this project website locally
+
+1. Under project, `yarn init` to install dependency
+2. `nodemon server.js` to run server in oreder to simulate upload behavior
+
+## Reference
+
+See [React file upload: proper and easy way](https://programmingwithmosh.com/javascript/react-file-upload-proper-server-side-nodejs-easy/)
