@@ -2,10 +2,14 @@ var express = require('express');
 var app = express();
 var multer = require('multer');
 var cors = require('cors');
+var fs = require('fs');
+
+var DEST_PATH = './public/dataset';
+
 app.use(cors());
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, 'public/dataset');
+    cb(null, DEST_PATH);
   },
   filename: function(req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname);
@@ -18,6 +22,10 @@ app.get('/', function(req, res) {
   return res.send('Hello Server');
 });
 app.post('/upload', function(req, res) {
+  if (!fs.existsSync(DEST_PATH)) {
+    fs.mkdirSync(DEST_PATH);
+  }
+
   upload(req, res, function(err) {
     if (err instanceof multer.MulterError) {
       return res.status(500).json(err);
