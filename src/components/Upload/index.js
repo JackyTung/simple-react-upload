@@ -36,10 +36,13 @@ const Upload = () => {
     setFiles(f);
   };
 
+  // NOTE: why encrypte webkitRelativePath
+  // https://stackoverflow.com/questions/50543256/webkitrelativepath-not-available-in-expressjs-fileupload/50543726
+
   const handleClickUpload = () => {
     const data = new FormData();
     for (let x = 0; x < files.length; x++) {
-      data.append('file', files[x]);
+      data.append('file', files[x], window.btoa(files[x].webkitRelativePath));
     }
     axios
       .post('http://localhost:8000/upload', data, {
