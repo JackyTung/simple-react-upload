@@ -55,7 +55,7 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-simple-import-sort": "^5.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "husky": "^4.0.10",
     "i18next": "^19.0.3",
     "i18next-browser-languagedetector": "^4.0.1",
